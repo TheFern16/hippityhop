@@ -50,6 +50,7 @@ app.delete('/lyrics', function(req, res) {
       if (err) {
         throw err;
       }
+      console.log(response);
       res.status(204).send(req.body.lyric);
     });
 });
