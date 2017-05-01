@@ -24,8 +24,8 @@ angular.module('lyrics', [])
       bindToController: true,
       controller: function() {},
       template: `
-        <ul>
-          <li ng-repeat="lyric in props.lyrics track by $index">
+        <ul class="lyricsList">
+          <li class="lyricItem" ng-repeat="lyric in props.lyrics track by $index">
             {{ lyric }}
           </li>
         </ul>

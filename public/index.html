@@ -4,13 +4,15 @@
   <meta charset="utf-8">
   <title>hippity hop</title>
   <script src="./lib/angular/angular.js"></script>
+  <link rel="stylesheet" href="./styles/styles.css"
 </head>
 <body>
+  <h1>Hippity Hop</h1>
   <div ng-app="lyrics">
     <div ng-controller="lyricsCtrl">
       <input ng-model="newLyric">
       <button ng-click="addLyric()">add lyric</button>
-      <lyrics-list lyrics="myLyrics"></lyrics-list>
+      <lyrics-list class="lyricsContainer" lyrics="myLyrics"></lyrics-list>
     </div>
   </div>
   <script src="index.js"></script>
