@@ -12,10 +12,14 @@
     <div ng-controller="lyricsCtrl">
       <input ng-model="newLyric">
       <button ng-click="addLyric()">add lyric</button>
-      <lyrics-list class="lyricsContainer" lyrics="myLyrics"></lyrics-list>
+      <div class="container">
+        <video-player></video-player>
+        <lyrics-list class="lyricsContainer" lyrics="myLyrics"></lyrics-list>
+      </div>
     </div>
   </div>
   <script src="index.js"></script>
   <script src="./services/services.js"></script>
+  <script src="videoPlayer.js"></script>
 </body>
 </html>
