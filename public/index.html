@@ -10,11 +10,13 @@
   <h1>Hippity Hop</h1>
   <div ng-app="lyrics">
     <div ng-controller="lyricsCtrl">
-      <input ng-model="newLyric">
-      <button ng-click="addLyric()">add lyric</button>
+      <div class="inputContainer">
+        <input ng-model="newLyric">
+        <button ng-click="addLyric()">add lyric</button>
+      </div>
       <div class="container">
-        <video-player></video-player>
-        <lyrics-list class="lyricsContainer" lyrics="myLyrics"></lyrics-list>
+        <video-player></video-player />
+        <lyrics-list class="lyricsContainer" lyrics="myLyrics" />
       </div>
     </div>
   </div>
