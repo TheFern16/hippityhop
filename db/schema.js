@@ -12,10 +12,10 @@ db.once('open', function() {
 
 autoIncrement.initialize(db);
 
-var lyricSchema = new mongoose.Schema({
+var lyricsSchema = new mongoose.Schema({
   lyric: {type: String, required: true, index: {unique: true}}
 });
 
-lyricSchema.plugin(autoIncrement.plugin, 'Lyric');
-var Lyric = mongoose.model('Lyric', lyricSchema);
-module.exports = Lyric;
+lyricsSchema.plugin(autoIncrement.plugin, 'Lyrics');
+var Lyrics = mongoose.model('Lyrics', lyricsSchema);
+module.exports = Lyrics;
