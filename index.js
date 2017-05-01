@@ -34,3 +34,22 @@ app.post('/lyrics', function(req, res) {
       }
     });
 });
+
+app.put('/lyrics', function(req, res) {
+  Lyrics.findOne({ _id: req.body._id })
+    .exec((err, lyric) => {
+      lyric.lyric = req.body.lyric
+      res.status(202).send(lyric);
+    });
+});
+
+// app.delete('/burgers', function(req, res) {
+//   Burger.findOne({burgername: req.body.burgername})
+//     .remove()
+//     .exec((err, response) => {
+//       if (err) {
+//         throw err;
+//       }
+//       res.status(204).send(req.body.burgername);
+//     });
+// });
