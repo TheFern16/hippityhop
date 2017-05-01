@@ -24,4 +24,22 @@ angular.module('lyrics')
       });
     }
 
+    this.searchYouTube = function(query, callback) {
+      $http({
+        method: 'GET',
+        url: 'https://www.googleapis.com/youtube/v3/search',
+        params: {
+          part: 'snippet',
+          q: query,
+          type: 'video',
+          maxResult: 1,
+          key: $window.YOUTUBE_API_KEY,
+          videoEmbeddable: 'true'
+        }
+      }).then(({data}) => {
+        if (callback) {
+          callback(data.items);
+        }
+      });
+    }
   });

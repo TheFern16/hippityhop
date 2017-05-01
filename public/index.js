@@ -26,7 +26,7 @@ angular.module('lyrics', [])
       template: `
         <ul class="lyricsList">
           <li class="lyricItem" ng-repeat="lyric in props.lyrics track by $index">
-            {{ lyric }}
+            "{{lyric}}"
           </li>
         </ul>
       `
