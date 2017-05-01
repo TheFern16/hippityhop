@@ -43,13 +43,13 @@ app.put('/lyrics', function(req, res) {
     });
 });
 
-// app.delete('/burgers', function(req, res) {
-//   Burger.findOne({burgername: req.body.burgername})
-//     .remove()
-//     .exec((err, response) => {
-//       if (err) {
-//         throw err;
-//       }
-//       res.status(204).send(req.body.burgername);
-//     });
-// });
+app.delete('/lyrics', function(req, res) {
+  Lyrics.findOne({ lyric: req.body.lyric })
+    .remove()
+    .exec((err, response) => {
+      if (err) {
+        throw err;
+      }
+      res.status(204).send(req.body.lyric);
+    });
+});
