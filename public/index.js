@@ -12,14 +12,14 @@ angular.module('lyrics', [])
       var newLyric = $scope.newLyric;
       lyricsServices.addLyric(newLyric, function(data) {
         $window.location.reload();
-      })
+      });
     }
 
     $scope.delete = (item) => {
       var spliceIndex = $scope.myLyrics[item];
       lyricsServices.removeLyric($scope.myLyrics[item], function(res) {
         $window.location.reload();
-      })
+      });
     }
 
   }).directive('lyricsList', function(lyricsServices, $window) {
@@ -43,9 +43,10 @@ angular.module('lyrics', [])
         <video-player video="ctrl.song"></video-player />
         <ul class="lyricsList">
           <li
-            class="lyricItem"
+            class="lyricItem animate-repeat"
             ng-click="ctrl.searchVid(lyric)"
             ng-repeat="lyric in ctrl.lyrics track by $index"
+            ng-hide="lyrics"
           >
             "{{lyric}}"
           <button ng-click="ctrl.remove($index)">remove</button>

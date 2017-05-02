@@ -4,11 +4,12 @@
   <meta charset="utf-8">
   <title>hippity hop</title>
   <script src="./lib/angular/angular.js"></script>
-  <link rel="stylesheet" href="./styles/styles.css"
+  <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-  <h1>Hippity Hop</h1>
   <div ng-app="lyrics">
+  <h1><a href="#/">Hippity</a> <a href="#/rhymebook">Hop</a></h1>
+    <div ng-view></div>
     <div ng-controller="lyricsCtrl">
       <div class="inputContainer">
         <input ng-model="newLyric">
@@ -23,5 +24,6 @@
   <script src="./services/services.js"></script>
   <script src="videoPlayer.js"></script>
   <script src="./config/config.js"></script>
+  <script src="./controllers/rhymebook.js"></script>
 </body>
 </html>
