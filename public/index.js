@@ -3,7 +3,6 @@ angular.module('lyrics', [])
     $scope.myLyrics = [];
     $scope.currentSong = 'GF8aaTu2kg0';
 
-
     lyricsServices.getLyrics('', function({data}){
       data.forEach(lyric => $scope.myLyrics.push(lyric.lyric));
     })
@@ -33,9 +32,12 @@ angular.module('lyrics', [])
       controllerAs: 'ctrl',
       bindToController: true,
       controller: function($scope) {
+        this.videos;
         this.searchVid = (item) => {
           lyricsServices.searchYouTube(item, function(res) {
             $scope.ctrl.song = res[0].id.videoId
+            this.videos = res;
+            console.log(this.videos);
           });
         }
       },
