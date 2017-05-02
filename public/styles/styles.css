@@ -43,6 +43,7 @@ button {
   margin-bottom: 10px;
   color: #F8F8FF;
   background-color: #ff9933;
+  width: 75%;
 }
 
 .inputContainer {
@@ -69,7 +70,7 @@ button {
   padding: 15px;
   margin: 10px;
   border: 10px solid #ffffa1;
-  background-image: url('https://upload.wikimedia.org/wikipedia/en/6/6b/NasIllmatic.jpg')
+  background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/BigSeanIDecided.jpg/220px-BigSeanIDecided.jpg')
 }
 
 .lyricItem:hover{
