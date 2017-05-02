@@ -15,8 +15,8 @@ h1 {
   letter-spacing: -1px;
   line-height: 1;
   text-align: center;
-  border: 5px solid #ffffa1;
-  padding: 10px;
+  border: 15px solid #ffffa1;
+  padding: 15px;
 }
 
 input {
@@ -36,15 +36,23 @@ button {
   background-color: #ff9933;
 }
 
+.googleSearch {
+  padding: 0px;
+  margin: 0px;
+  color: #F8F8FF;
+  background-color: #ff9933;
+}
+
 .inputContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 10px solid #ffffa1;
+  padding-bottom: 7px;
 }
 
 .lyricsList {
   list-style: none;
-  margin: 0;
   padding-top: 30px;
   text-align: center;
   display: flex;
@@ -55,6 +63,8 @@ button {
 .lyricItem {
   flex: 1 1 25%;
   font-size: 25px;
+  padding: 15px;
+  margin: 10px;
   border: 10px solid #ffffa1;
 }
 
@@ -76,12 +86,4 @@ button {
   border: 0;
   box-shadow: 0 1px 2px rgba(0,0,0,.1);
   margin-top: 10px;
-}
-
-.ng-hide {
-  height: 0;
-  width: 0;
-  background-color: transparent;
-  top:-200px;
-  left: 200px;
 }
