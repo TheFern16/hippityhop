@@ -6,7 +6,9 @@ var Rhymes = require('./db/schema.js').Rhymes;
 var app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
+
 var port = process.env.PORT || 1337;
 
 app.listen(port, () => {
