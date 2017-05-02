@@ -1,8 +1,5 @@
 angular.module('lyrics')
-  .controller('videoCtrl', function() {
-    this.videoUrl = () => {
-      // return this.video ? `https://www.youtube.com/embed/${this.video.id.videoId}` : '';
-    }
+  .controller('videoCtrl', function($scope) {
   })
   .directive('videoPlayer', function($sce) {
     return {
@@ -13,11 +10,20 @@ angular.module('lyrics')
       controller: 'videoCtrl',
       controllerAs: 'ctrl',
       bindToController: true,
+      controller: function($scope) {
+        this.videoUrl = ($scope) => {
+          console.log(this.video);
+          var v = this.video ? `https://www.youtube.com/embed/${this.video}` : '';
+          return $sce.trustAsResourceUrl(v);
+        }
+      },
+      link: function(scope, elem, attr) {
+      },
       template: `
         <div class="videoContainer">
 
           <div class="video-player">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/GF8aaTu2kg0" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" ng-src="{{ctrl.videoUrl()}}" frameborder="0" allowfullscreen></iframe>
           </div>
 
         </div>

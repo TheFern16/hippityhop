@@ -32,7 +32,7 @@ angular.module('lyrics')
           part: 'snippet',
           q: query,
           type: 'video',
-          maxResult: 1,
+          maxResult: 5,
           key: $window.YOUTUBE_API_KEY,
           videoEmbeddable: 'true'
         }
