@@ -7,8 +7,9 @@ var app = express();
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
+var port = process.env.PORT || 1337;
 
-app.listen(1337, () => {
+app.listen(port, () => {
   console.log('I am listening to port 1337');
 });
 
@@ -44,35 +45,10 @@ app.put('/lyrics', function(req, res) {
 });
 
 app.delete('/lyrics', function(req, res) {
-  console.log(req.body)
   Lyrics.findOne({ lyric: req.body.lyric }).remove().exec((err, response) => {
     if (err) {
       throw err;
     }
     res.status(204).send(req.body.lyric);
-  });
-});
-
-// the routes supported for the rhymes endpoint
-
-app.get('/rhymes', function(req, res) {
-  Rhymes.find({}).exec((err, rhymes) => {
-    res.status(200).send(rhymes);
-  });
-});
-
-app.post('/rhymes', function(req, res) {
-  Rhymes.findOne({ rhyme: req.body._id }).exec((err, lyric) => {
-    if (!lyric) {
-      var newRhyme = new Rhymes({
-        rhyme: req.body.rhyme
-      });
-      newRhyme.save((err, newRhyme) => {
-        if (err) {
-          res.status(500).send(err);
-        }
-        res.status(201).send(newRhyme);
-      });
-    }
   });
 });
