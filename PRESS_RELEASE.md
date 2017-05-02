@@ -23,7 +23,7 @@ Once the project moves into development, the press release can be used as a touc
   > Find the song that you just can't quite remember.
 
 ## Summary ##
-  > Hippity hop is designed for people who just can't quite remember that one song!  An app like shazam is great for those instances when a song is playing.  Hippity hop is built for people wanting to remember that one song, but only remember a snippet of the song.  Or a specific lyrics or sentence.  Find the song that you just can't quite remember.
+  > Hippity hop is designed for people who just can't quite remember that one song!  An app like shazam is great for those instances when a song is playing.  Hippity hop is built for people wanting to remember that one song...  If you can remember that song lyric, or that quote you love.  Hippity hop will find it for you.  Find the song that you just can't quite remember.
 
 ## Problem ##
   > Have you ever had a melody stuck in your head?  Or a specific lyric in your head?  Has it ever driven you crazy?
@@ -32,13 +32,13 @@ Once the project moves into development, the press release can be used as a touc
   > Hippity Hop allows you to search songs based on the lyrics that you can't quite remember.
 
 ## Quote from You ##
-  > Hippity Hop is the greatest app since... ever.
+  > "Hippity Hop has helped a handful of people all over the world find the song they can't quite remember."
 
 ## How to Get Started ##
   > All you have to do is type in the lyrics that you can't remember.  Slick search.  Enjoy the magic!
 
 ## Customer Quote ##
-  > 'I can't believe how amazing this product was.' - Customer
+  > "Hippity Hop is the greatest app since... ever." - John Q. Public
 
 ## Closing and Call to Action ##
   > Download HH today!

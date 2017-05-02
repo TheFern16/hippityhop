@@ -10,11 +10,8 @@
 <body>
   <div ng-app="lyrics">
   <h1>< Hippity Hop ></h1>
+    <gcse:search></gcse:search>
     <div ng-controller="lyricsCtrl">
-      <div class="inputContainer">
-        <input ng-model="newLyric">
-        <button ng-click="addLyric()">add lyric</button>
-      </div>
       <div class="container">
         <lyrics-list class="lyricsContainer" lyrics="myLyrics" song="currentSong" remove="delete"></lyrics-list>
       </div>
@@ -24,6 +21,17 @@
   <script src="./services/services.js"></script>
   <script src="videoPlayer.js"></script>
   <script src="./config/config.js"></script>
+  <script>
+    (function() {
+      var cx = '008822885181295279483:3uy1wvpnlc8';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
   <script>
 
   const pressed = [];

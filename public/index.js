@@ -47,6 +47,10 @@ angular.module('lyrics', [])
       },
       template: `
         <video-player video="ctrl.song"></video-player />
+        <div class="inputContainer">
+          <input ng-model="newLyric">
+          <button ng-click="addLyric()">add lyric</button>
+        </div>
         <ul class="lyricsList">
           <li
             class="lyricItem"
