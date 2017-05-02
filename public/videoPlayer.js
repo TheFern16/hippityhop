@@ -21,7 +21,7 @@ angular.module('lyrics')
       template: `
         <div class="videoContainer">
 
-          <div class="video-player">
+          <div class="videoPlayer">
             <iframe width="1024" height="600" ng-src="{{ctrl.videoUrl()}}" frameborder="0" allowfullscreen></iframe>
           </div>
 
