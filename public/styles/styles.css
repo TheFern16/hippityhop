@@ -8,7 +8,7 @@ body {
 }
 
 h1 {
-  color: #111;
+  color: #ffffff;
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 100px;
   font-weight: bold;
@@ -17,6 +17,7 @@ h1 {
   text-align: center;
   border: 15px solid #ffffa1;
   padding: 15px;
+  background-image: url('https://images.genius.com/47ab70be3f64e7061a5d1f1a590e60ff.220x220x1.jpg');
 }
 
 input {
@@ -39,7 +40,7 @@ button {
 
 .googleSearch {
   padding: 0px;
-  margin: 0px;
+  margin-bottom: 10px;
   color: #F8F8FF;
   background-color: #ff9933;
 }
@@ -68,6 +69,7 @@ button {
   padding: 15px;
   margin: 10px;
   border: 10px solid #ffffa1;
+  background-image: url('https://upload.wikimedia.org/wikipedia/en/6/6b/NasIllmatic.jpg')
 }
 
 .lyricItem:hover{

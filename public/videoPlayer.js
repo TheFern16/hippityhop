@@ -22,10 +22,10 @@ angular.module('lyrics')
         <div class="videoContainer">
 
           <div class="video-player">
-            <iframe width="560" height="315" ng-src="{{ctrl.videoUrl()}}" frameborder="0" allowfullscreen></iframe>
+            <iframe width="854" height="480" ng-src="{{ctrl.videoUrl()}}" frameborder="0" allowfullscreen></iframe>
           </div>
 
         </div>
       `
     }
-  })
+  });
