@@ -10,10 +10,18 @@
 <body>
   <div ng-app="lyrics">
   <h1>< Hippity Hop ></h1>
-    <div class="googlSearch"><gcse:search></gcse:search></div>
+    <div class="googlSearch"><gcse:search></gcse:search>
     <div ng-controller="lyricsCtrl">
       <div class="container">
-        <lyrics-list class="lyricsContainer" lyrics="myLyrics" song="currentSong" remove="delete"></lyrics-list>
+        <lyrics-list
+          class="lyricsContainer"
+          lyrics="myLyrics"
+          song="currentSong"
+          remove="delete"
+          addLyric="addLyric"
+          >
+
+        </lyrics-list>
       </div>
     </div>
   </div>

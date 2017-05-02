@@ -5,14 +5,7 @@ angular.module('lyrics', [])
 
     lyricsServices.getLyrics('', function({data}){
       data.forEach(lyric => $scope.myLyrics.push(lyric.lyric));
-    })
-
-    $scope.addLyric = function() {
-      var newLyric = $scope.newLyric;
-      lyricsServices.addLyric(newLyric, function(data) {
-        $window.location.reload();
-      });
-    }
+    });
 
     $scope.delete = (item) => {
       var spliceIndex = $scope.myLyrics[item];
@@ -26,7 +19,8 @@ angular.module('lyrics', [])
       scope: {
         lyrics: '<',
         song: '<',
-        remove: '<'
+        remove: '<',
+        addlyric: '<'
       },
       restrict: 'E',
       controllerAs: 'ctrl',
@@ -44,12 +38,17 @@ angular.module('lyrics', [])
             }
           });
         }
+        this.lyricAdder = () => {
+          lyricsServices.addLyric($scope.newLyric, function(data) {
+            $window.location.reload();
+          });
+        }
       },
       template: `
         <video-player video="ctrl.song"></video-player />
         <div class="inputContainer">
           <input ng-model="newLyric">
-          <button ng-click="addLyric()">add lyric</button>
+          <button ng-click="ctrl.lyricAdder()">add lyric</button>
         </div>
         <ul class="lyricsList">
           <li
