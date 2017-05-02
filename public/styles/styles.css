@@ -28,6 +28,7 @@ iframe {
   margin-right: 20px;
   padding-top: 20px;
   flex: 1 1 100%;
+  border: 5px solid #8A8A8A;
 }
 
 button {
@@ -49,6 +50,7 @@ button {
   align-items: center;
   border-bottom: 10px solid #ffffa1;
   padding-bottom: 7px;
+  padding-top: 20px;
 }
 
 .lyricsList {
@@ -76,7 +78,9 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 10px;
   border-top: 10px solid #ffffa1;
+  background-image: url('http://muz-tv.ru/pic/3/a/3a2af9134b746ac687eff8e1ed613241.jpg')
 }
 
 
