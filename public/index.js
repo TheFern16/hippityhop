@@ -32,12 +32,16 @@ angular.module('lyrics', [])
       controllerAs: 'ctrl',
       bindToController: true,
       controller: function($scope) {
-        this.videos;
+        this.count = 0;
         this.searchVid = (item) => {
           lyricsServices.searchYouTube(item, function(res) {
-            $scope.ctrl.song = res[0].id.videoId
-            this.videos = res;
-            console.log(this.videos);
+            if ($scope.ctrl.song === res[0].id.videoId) {
+              $scope.ctrl.song = res[1].id.videoId;
+            } else if ($scope.ctrl.song === res[1].id.videoId) {
+              $scope.ctrl.song = res[2].id.videoId;
+            } else if ($scope.ctrl.song !== res[0].id.videoId) {
+              $scope.ctrl.song = res[0].id.videoId;
+            }
           });
         }
       },
@@ -45,7 +49,7 @@ angular.module('lyrics', [])
         <video-player video="ctrl.song"></video-player />
         <ul class="lyricsList">
           <li
-            class="lyricItem animate-repeat"
+            class="lyricItem"
             ng-click="ctrl.searchVid(lyric)"
             ng-repeat="lyric in ctrl.lyrics track by $index"
             ng-hide="lyrics"
@@ -56,6 +60,4 @@ angular.module('lyrics', [])
         </ul>
       `
     }
-  })
-
-// https://lit-wildwood-58440.herokuapp.com/ | https://git.heroku.com/lit-wildwood-58440.git
+  });
