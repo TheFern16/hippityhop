@@ -15,12 +15,7 @@ angular.module('lyrics', [])
       })
     }
 
-    // lyricsServices.searchYouTube('hip hop', function(res) {
-    //   console.log(res, 'this is the response');
-    //   $scope.currentSong = res[0].id.videoId;
-    // })
-
-  }).directive('lyricsList', function() {
+  }).directive('lyricsList', function(lyricsServices) {
     return {
       scope: {
         lyrics: '<',
@@ -29,11 +24,21 @@ angular.module('lyrics', [])
       restrict: 'E',
       controllerAs: 'ctrl',
       bindToController: true,
-      controller: function($scope) {},
+      controller: function() {
+        this.searchVid = (item) => {
+          lyricsServices.searchYouTube(item, function(res) {
+            console.log(res[0].id.videoId, 'this is the response');
+          })
+        }
+      },
       template: `
         <video-player video="ctrl.song"></video-player />
         <ul class="lyricsList">
-          <li class="lyricItem" ng-repeat="lyric in ctrl.lyrics track by $index">
+          <li
+            class="lyricItem"
+            ng-click="ctrl.searchVid(lyric)"
+            ng-repeat="lyric in ctrl.lyrics track by $index"
+          >
             "{{lyric}}"
           </li>
         </ul>

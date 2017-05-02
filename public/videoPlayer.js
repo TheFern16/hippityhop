@@ -12,7 +12,6 @@ angular.module('lyrics')
       bindToController: true,
       controller: function($scope) {
         this.videoUrl = ($scope) => {
-          console.log(this.video);
           var v = this.video ? `https://www.youtube.com/embed/${this.video}` : '';
           return $sce.trustAsResourceUrl(v);
         }
