@@ -6,10 +6,22 @@ body {
   font-family: sans-serif;
 }
 
-h1 {
+/*h1 {
   padding-bottom: 20px;
   text-align: center;
   text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+}*/
+
+h1 {
+  color: #111;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 100px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+  border: 5px solid #ffffa1;
+  padding: 10px;
 }
 
 input {
@@ -21,6 +33,12 @@ iframe {
   margin-right: 20px;
   padding-top: 20px;
   flex: 1 1 100%;
+}
+
+button {
+  margin: 10px;
+  color: #F8F8FF;
+  background-color: #ff9933;
 }
 
 .inputContainer {
@@ -42,13 +60,18 @@ iframe {
 .lyricItem {
   flex: 1 1 25%;
   font-size: 25px;
-  border: 10px solid black;
+  border: 10px solid #ffffa1;
+}
+
+.lyricItem:hover{
+  color: black;
 }
 
 .videoContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 10px solid #ffffa1;
 }
 
 
