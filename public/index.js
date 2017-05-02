@@ -15,11 +15,19 @@ angular.module('lyrics', [])
       })
     }
 
-  }).directive('lyricsList', function(lyricsServices) {
+    $scope.delete = (item) => {
+      var spliceIndex = $scope.myLyrics[item];
+      lyricsServices.removeLyric($scope.myLyrics[item], function(res) {
+        $window.location.reload();
+      })
+    }
+
+  }).directive('lyricsList', function(lyricsServices, $window) {
     return {
       scope: {
         lyrics: '<',
-        song: '<'
+        song: '<',
+        remove: '<'
       },
       restrict: 'E',
       controllerAs: 'ctrl',
@@ -40,6 +48,7 @@ angular.module('lyrics', [])
             ng-repeat="lyric in ctrl.lyrics track by $index"
           >
             "{{lyric}}"
+          <button ng-click="ctrl.remove($index)">remove</button>
           </li>
         </ul>
       `

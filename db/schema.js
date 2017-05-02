@@ -16,6 +16,16 @@ var lyricsSchema = new mongoose.Schema({
   lyric: {type: String, required: true, index: {unique: true}}
 });
 
+var rhymeSchema = new mongoose.Schema({
+  rhyme: {type: String, required: true, index: {unique: true}}
+});
+
 lyricsSchema.plugin(autoIncrement.plugin, 'Lyrics');
+rhymeSchema.plugin(autoIncrement.plugin, 'Rhymes');
+
+var Rhymes = mongoose.model('Rhymes', rhymeSchema);
 var Lyrics = mongoose.model('Lyrics', lyricsSchema);
-module.exports = Lyrics;
+module.exports = {
+  Lyrics,
+  Rhymes
+};

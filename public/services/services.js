@@ -24,6 +24,19 @@ angular.module('lyrics')
       });
     }
 
+    this.removeLyric = function(param, callback) {
+      $http({
+        method: 'DELETE',
+        url: 'http://127.0.0.1:1337/lyrics',
+        headers: { 'Content-Type': 'application/json' },
+        data: {
+          lyric: param
+        }
+      }).then((res) => {
+        callback(res);
+      })
+    }
+
     this.searchYouTube = function(query, callback) {
       $http({
         method: 'GET',
