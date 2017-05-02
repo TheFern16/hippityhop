@@ -24,11 +24,11 @@ angular.module('lyrics', [])
       restrict: 'E',
       controllerAs: 'ctrl',
       bindToController: true,
-      controller: function() {
+      controller: function($scope) {
         this.searchVid = (item) => {
           lyricsServices.searchYouTube(item, function(res) {
-            console.log(res[0].id.videoId, 'this is the response');
-          })
+            $scope.ctrl.song = res[0].id.videoId
+          });
         }
       },
       template: `
