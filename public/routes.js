@@ -1,11 +1,16 @@
-angular.module('lyrics', ['ngRoute']).config(function($routeProvider) {
+angular.module('lyrics').config(function($routeProvider, $locationProvider) {
   console.log('here');
   $routeProvider
     .when('/rhymebook', {
-      templateUrl: '/controllers/rhymebook.html',
+      templateUrl: 'pages/rhymebook.html',
       controller: 'rhymeCtrl'
     })
-    .otherwise({
+    .when('/', {
+      templateUrl: 'pages/lyriclist.html',
+      controller: 'lyricsCtrl'
+    })
+    otherwise({
       redirectTo: '/'
-    });
+    })
+  $locationProvider.html5Mode(true);
 })
