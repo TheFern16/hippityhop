@@ -4,7 +4,7 @@ angular.module('lyrics')
     this.getLyrics = function(param, callback) {
       $http({
         method: 'GET',
-        url: 'http://127.0.0.1:1337/lyrics',
+        url: '/lyrics',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
       }).then((res) => {
         callback(res);
@@ -14,7 +14,7 @@ angular.module('lyrics')
     this.addLyric = function(param, callback) {
       $http({
         method: 'POST',
-        url: 'http://127.0.0.1:1337/lyrics',
+        url: '/lyrics',
         headers: { 'Content-Type': 'application/json' },
         data: {
           lyric: param
@@ -27,7 +27,7 @@ angular.module('lyrics')
     this.removeLyric = function(param, callback) {
       $http({
         method: 'DELETE',
-        url: 'http://127.0.0.1:1337/lyrics',
+        url: '/lyrics',
         headers: { 'Content-Type': 'application/json' },
         data: {
           lyric: param
