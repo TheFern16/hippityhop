@@ -1,4 +1,4 @@
-angular.module('lyrics', [])
+angular.module('lyrics', ['ngAnimate'])
   .controller('lyricsCtrl', function($scope, lyricsServices, $window) {
     $scope.myLyrics = [];
     $scope.currentSong = 'GF8aaTu2kg0';
@@ -55,7 +55,6 @@ angular.module('lyrics', [])
             class="lyricItem"
             ng-click="ctrl.searchVid(lyric)"
             ng-repeat="lyric in ctrl.lyrics track by $index"
-            ng-hide="lyrics"
           >
             "{{lyric}}"
           <button ng-click="ctrl.remove($index)">remove</button>
